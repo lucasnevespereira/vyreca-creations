@@ -5,12 +5,10 @@
   </div>
 </template>
 <script>
-import commerce from "~/common/commerce.js";
-
 export default {
-  async asyncData({ params }) {
+  async asyncData({ params, $commerce }) {
     const { permalink } = params;
-    const product = await commerce.products.retrieve(permalink, {
+    const product = await $commerce.products.retrieve(permalink, {
       type: "permalink",
     });
     return {

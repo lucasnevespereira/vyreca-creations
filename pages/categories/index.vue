@@ -5,11 +5,9 @@
   </div>
 </template>
 <script>
-import commerce from "~/common/commerce.js";
-
 export default {
-  async asyncData() {
-    const { data: categories } = await commerce.categories.list();
+  async asyncData({ $commerce }) {
+    const { data: categories } = await $commerce.categories.list();
     return {
       categories,
     };

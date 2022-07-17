@@ -12,13 +12,11 @@
   </div>
 </template>
 <script>
-import commerce from "~/common/commerce.js";
-
 export default {
-  async asyncData() {
-    const { data: merchant } = await commerce.merchants.about();
-    const { data: categories } = await commerce.categories.list();
-    const { data: products } = await commerce.products.list();
+  async asyncData({ $commerce }) {
+    const { data: merchant } = await $commerce.merchants.about();
+    const { data: categories } = await $commerce.categories.list();
+    const { data: products } = await $commerce.products.list();
     return {
       merchant,
       categories,

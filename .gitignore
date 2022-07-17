@@ -1,6 +1,9 @@
 .env
 .DS_Store
 
+.idea
+.vscode
+
 # Nuxt dev/build outputs
 .output
 .nuxt
