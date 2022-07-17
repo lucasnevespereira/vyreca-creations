@@ -1,0 +1,18 @@
+<template>
+  <div>
+    <h1>Categories</h1>
+    <CategoryList :categories="categories" />
+  </div>
+</template>
+<script>
+import commerce from "~/common/commerce.js";
+
+export default {
+  async asyncData() {
+    const { data: categories } = await commerce.categories.list();
+    return {
+      categories,
+    };
+  },
+};
+</script>
